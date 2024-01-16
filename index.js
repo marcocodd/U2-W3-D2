@@ -39,33 +39,18 @@ if (localStorage.getItem('account-name')) {
 const counter = document.getElementById('counter').textContent
 
 
-const timePassedCounter = function() {
-    
-    let counterIndex = parseInt(sessionStorage.getItem('counter'))
+const timePassedCounter = function () {
+ let counterIndex = parseInt(sessionStorage.getItem("counter"));
 
-    if (sessionStorage.getItem('counter')) {
-       counterIndex++ 
-       sessionStorage.setItem('counter', counterIndex)
-       document.getElementById('counter').textContent=counterIndex
-    }
-    
-    else{
-        sessionStorage.setItem('counter', 0)
-        document.getElementById('counter').textContent=counterIndex
-    }
-    
-    
-   
-    
-   
-    
-   
-        
+ if (sessionStorage.getItem("counter")) {
+  counterIndex++;
+  sessionStorage.setItem("counter", counterIndex);
+  document.getElementById("counter").textContent = counterIndex;
+ } else {
+  sessionStorage.setItem("counter", 0);
+  document.getElementById("counter").textContent = counterIndex;
+ }
+};
 
-
-    
-}
-
-setInterval(timePassedCounter, 1000)
-
-timePassedCounter()
+timePassedCounter();
+setInterval(timePassedCounter, 1000);
