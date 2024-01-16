@@ -40,14 +40,16 @@ const counter = document.getElementById('counter').textContent
 
 
 const timePassedCounter = function () {
- let counterIndex = parseInt(sessionStorage.getItem("counter"));
+ 
 
  if (sessionStorage.getItem("counter")) {
+  let counterIndex = parseInt(sessionStorage.getItem("counter"));
   counterIndex++;
   sessionStorage.setItem("counter", counterIndex);
   document.getElementById("counter").textContent = counterIndex;
  } else {
   sessionStorage.setItem("counter", 0);
+  counterIndex = parseInt(sessionStorage.getItem("counter"));
   document.getElementById("counter").textContent = counterIndex;
  }
 };
